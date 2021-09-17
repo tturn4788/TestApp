@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 import streamlit as st
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 st.title('Proof of Concept Data App')
 title_image = Image.open("AppTitle.jpg")
