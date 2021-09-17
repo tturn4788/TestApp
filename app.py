@@ -31,7 +31,8 @@ hist_values = data[['Date','System']]
 st.line_chart(hist_values)
 
 'Before'
-data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))][['Site','Date','System']].plot(x='Date', y='System', subplots=True)
+subbed = data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))][['Site','Date','System']].plot(x='Date', y='System', subplots=True)
+st.line_chart(subbed)
 'After'
 # Some number in the range 0-11
 site_to_filter = st.slider('Site', 0, 6, 10)
@@ -60,12 +61,12 @@ st.markdown('Filtered Table')
 st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Zone','Site','Date','System']])
 
 st.markdown('Line Chart')                                                                             
-basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Site','Date','System']].plot(x='Date', y='System'))
+#basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Site','Date','System']].plot(x='Date', y='System'))
 
 st.markdown('Second attempt at filtered line chart')
 
-filter_data = basicc_chart[['Date','Site','System']]
-st.line_chart(filter_data)
+#filter_data = basicc_chart[['Date','Site','System']]
+#st.line_chart(filter_data)
 
 st.markdown("Third time's a charm? Nah")
 
