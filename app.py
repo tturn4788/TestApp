@@ -61,7 +61,7 @@ basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter)
 
 st.markdown('Second attempt at filtered line chart')
 
-filter_data = basicc_chart.set_index('Date')['Date','Site','System']
+filter_data = basicc_chart[basicc_chart.set_index('Date')]['Date','Site','System']
 st.line_chart(filter_data)
 
 st.markdown("Third time's a charm? Nah")
