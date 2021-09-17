@@ -31,9 +31,17 @@ hist_values = data[['Date','System']]
 st.line_chart(hist_values)
 
 'Before'
-subbed = data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))][['Site','Date','System']].plot(x='Date', y='System', subplots=True)
-st.line_chart(subbed)
+subbed = data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))]
+st.write(subbed)
+subbed_twice = subbed[['Site','Date','System']].plot(x='Date', y='System', subplots=True)
+st.line_chart(subbed_twice)
 'After'
+st.write(subbed_twice)
+
+'And even more after'
+df_nums_filtered[df_nums_filtered.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y
+
+
 # Some number in the range 0-11
 site_to_filter = st.slider('Site', 0, 6, 10)
 filtered_data = data[data['Site'] == site_to_filter]
@@ -61,7 +69,8 @@ st.markdown('Filtered Table')
 st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Zone','Site','Date','System']])
 
 st.markdown('Line Chart')                                                                             
-#basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Site','Date','System']].plot(x='Date', y='System'))
+basically_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))]
+basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System', subplots=True))
 
 st.markdown('Second attempt at filtered line chart')
 
@@ -72,7 +81,7 @@ st.markdown("Third time's a charm? Nah")
 
 
 # Basic Altair line chart where it picks automatically the colors for the lines
-basic_chart = alt.Chart(pd.basicc_chart).mark_line().encode(
+basic_chart = alt.Chart(basicc_chart).mark_line().encode(
     x=['Date'],
     y=['System'],
     color=['Site'],
