@@ -5,6 +5,7 @@ from PIL import Image
 import streamlit as st
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import altair as alt
 
 st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
 
