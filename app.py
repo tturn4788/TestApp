@@ -1,8 +1,29 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from Helper import load_data, summary_poster
 
 st.title('Proof of Concept Data App')
+title_image = Image.open("AppTitle.jpg")
+st.image(title_image)
+
+#From music app file 
+stats_df = load_data("SampleforWork4.csv")
+color_map_df = load_data("color_map_df.csv")
+sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False).index
+summary_poster(sorted_site)
+
+
+st.markdown("### **Select Site:**")
+select_site = []
+
+select_site.append(st.selectbox('', sorted_site))
+
+#Filter df based on selection
+site_df = stats_df[stats_df['Site'].isin(select_site)]
+
+
+st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
 
 DATE_COLUMN = 'Date'
 DATA_URL = ('./Data/SampleforWork4.csv')
@@ -36,4 +57,4 @@ filtered_data = data[data['Site'] == site_to_filter]
 chart_data = filtered_data(
      columns=['', 'b', 'c'])
 
-st.line_chart(x = filtered_data['Date'], y=filtered_data['System'])ex[0]
+st.line_chart(x = filtered_data['Date'], y=filtered_data['System'])
