@@ -27,7 +27,7 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 #st.subheader('Number of pickups by hour')
-hist_values = (data[['Site','Date','System'].groupby('Site')])
+hist_values = data[['Site','Date','System']].groupby('Site')
 st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 5, 10)
