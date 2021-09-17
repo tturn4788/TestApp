@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
+from Pillow import Image
+import streamlit as st
 
 st.title('Proof of Concept Data App')
 title_image = Image.open("AppTitle.jpg")
