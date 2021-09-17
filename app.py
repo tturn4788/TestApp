@@ -30,10 +30,11 @@ if st.checkbox('Show raw data'):
 hist_values = data[['Date','System']]
 st.line_chart(hist_values)
 
+siting = st.slider('Site', 0, 5, 11)
 'Before'
-subbed = data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))]
+subbed = data[(data.Site.eq(siting))]
 st.line_chart(subbed[['Date','System']])
-subbed_twice = subbed[['Site','Date','System']].plot(x='Date', y='System', subplots=True)
+subbed.plot(x='Date', y='System', subplots=True)
 st.line_chart(subbed_twice)
 'After'
 st.write(subbed_twice)
