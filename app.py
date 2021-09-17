@@ -52,7 +52,7 @@ st.line_chart(filtered_data['Date'],filtered_data['System'])
 
 
 st.markdown('Second attempt at filtered line chart')
-st.line_chart(data[(filtered_data.Date.dt.quarter.eq(site2_to_filter)][['Date','System']].plot(x='Date', y='System'))
+st.line_chart(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']].plot(x='Date', y='System'))
 
 
 
