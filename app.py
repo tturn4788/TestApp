@@ -25,9 +25,9 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 
-st.subheader('Number of pickups by hour')
-hist_values = np.histogram(data[DATE_COLUMN])
-st.bar_chart(hist_values)
+#st.subheader('Number of pickups by hour')
+#hist_values = np.histogram(data[['Date','Site']])
+#st.bar_chart(hist_values)
 
 # Some number in the range 0-11
 site_to_filter = st.slider('Site', 0, 6, 10)
