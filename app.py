@@ -27,8 +27,8 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 #st.subheader('Number of pickups by hour')
-hist_values = data[['Site','Date','System']]
-st.line_chart(hist_values, columns=['Site'])
+hist_values = (data[['Site','Date','System']], columns=['Site'])
+st.line_chart(hist_values)
 
 siting = st.slider('Site', 0, 5, 11)
 'Before'
