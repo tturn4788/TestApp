@@ -123,7 +123,7 @@ st.image(title_image)
 stats_df = load_data("SampleforWork4.csv")
 color_map_df = load_data("color_map_df.csv")
 sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False).index
-summary_poster(sorted_site)
+summary_poster(sorted_site, color_map_df)
 
 
 st.markdown("### **Select Site:**")
