@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from helper import load_data, summary_poster
+
 
 st.title('Proof of Concept Data App')
 title_image = Image.open("AppTitle.jpg")
