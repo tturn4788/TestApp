@@ -39,7 +39,7 @@ st.line_chart(subbed_twice)
 st.write(subbed_twice)
 
 'And even more after'
-df_nums_filtered[df_nums_filtered.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y
+df_nums_filtered[df_nums_filtered.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
 
 
 # Some number in the range 0-11
