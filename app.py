@@ -26,23 +26,33 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 st.subheader('Number of pickups by hour')
-hist_values = np.histogram(data[DATE_COLUMN].dt.quarter, bins=4, range=(0,5))[0]
+hist_values = np.histogram(data[DATE_COLUMN])
 st.bar_chart(hist_values)
 
 # Some number in the range 0-11
-site_to_filter = st.slider('Site', 0, 6, 11)
+site_to_filter = st.slider('Site', 0, 6, 10)
 filtered_data = data[data['Site'] == site_to_filter]
 
 st.write(filtered_data)
+
+
+# Some number in the range 0-11
+site2_to_filter = st.slider('Quarter', 0, 2, 5)
+filtered_data = data[data['Site'] == site2_to_filter]
+filtered_data[['Zone','Site','System']]
+
 
 #st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 #st.(filtered_data)
 
 chart_data = filtered_data
 
-st.line_chart(x = filtered_data['Date'], y=filtered_data['System'])
+
+st.line_chart(filtered_data['Date'],filtered_data['System'])
 
 
+st.markdown('Second attempt at filtered line chart')
+st.line_chart(data[(filtered_data.Date.dt.quarter.eq(site2_to_filter)][['Date','System']].plot(x='Date', y='System'))
 
 
 
@@ -60,7 +70,6 @@ sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=F
 
 st.markdown("### **Select Site:**")
 select_site = []
-
 select_site.append(st.selectbox('', sorted_site))
 
 #Filter df based on selection
