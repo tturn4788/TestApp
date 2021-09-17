@@ -32,7 +32,7 @@ st.line_chart(hist_values)
 
 'Before'
 subbed = data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))]
-st.line_chart(subbed[['Date','System'])
+st.line_chart(subbed[['Date','System']])
 subbed_twice = subbed[['Site','Date','System']].plot(x='Date', y='System', subplots=True)
 st.line_chart(subbed_twice)
 'After'
