@@ -57,13 +57,14 @@ st.markdown('Filtered Table')
 st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']])
 
 st.markdown('Line Chart')                                                                             
+basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Site','Date','System']].plot(x='Date', y='System'))
+
 st.markdown('Second attempt at filtered line chart')
 
 filter_data = basicc_chart.set_index('Date')
 st.line_chart(filter_data)
 
 st.markdown("Third time's a charm? Nah")
-basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Site','Date','System']].plot(x='Date', y='System'))
 
 
 # Basic Altair line chart where it picks automatically the colors for the lines
