@@ -27,12 +27,12 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 #st.subheader('Number of pickups by hour')
-hist_values = (data[['Site','Date','System']])
+hist_values = (data[['Site','Date','System'].groupby('Site)])
 st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 5, 10)
 'Before'
-subbed = data[(data.Site.eq(siting))].
+subbed = data[(data.Site.eq(siting))]
 st.line_chart(subbed[['Date','System']])
 subbed_twice = subbed.plot(x='Date', y='System', subplots=True)
 
