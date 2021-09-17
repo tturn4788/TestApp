@@ -24,7 +24,7 @@ def summary_poster(site_df, color_dict):
             vertical_spacing=0.1, horizontal_spacing= 0.09)
     #PIE
     #data for pie
-    pie_data = site_df.groupby('Site')['System'].count()
+    pie_data = site_df.groupby('Date')['System'].count()
 
     fig.add_trace(go.Pie(labels = pie_data.index,
                             values = pie_data.values,
