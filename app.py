@@ -59,14 +59,18 @@ st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Da
 st.markdown('Line Chart')                                                                             
 st.markdown('Second attempt at filtered line chart')
 
+filter_data = basicc_chart.set_index('Date')
+st.line_chart(filter_data)
+
+st.markdown("Third time's a charm? Nah")
 basicc_chart = (filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Site','Date','System']].plot(x='Date', y='System'))
 
 
 # Basic Altair line chart where it picks automatically the colors for the lines
-basic_chart = alt.Chart(basicc_chart).mark_line().encode(
-    x='Date',
-    y='System',
-    color='Site',
+basic_chart = alt.Chart(pd.basicc_chart).mark_line().encode(
+    x=['Date'],
+    y=['System'],
+    color=['Site'],
     # legend=alt.Legend(title='Animals by year')
 )
 
