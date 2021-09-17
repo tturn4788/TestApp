@@ -31,7 +31,7 @@ hist_values = data[['Date','System']]
 st.line_chart(hist_values)
 
 'Before'
-df[(df.Site.eq(7)) & (df.Date.dt.quarter.eq(1))][['Date','System']].plot(x='Date', y='System')
+data[(data.Site.eq(7)) & (data.Date.dt.quarter.eq(1))][['Site','Date','System']].plot(x='Date', y='System', subplots=True)
 'After'
 # Some number in the range 0-11
 site_to_filter = st.slider('Site', 0, 6, 10)
