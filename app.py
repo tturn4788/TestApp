@@ -36,26 +36,31 @@ filtered_data = data[data['Site'] == site_to_filter]
 st.write(filtered_data)
 
 
-# Some number in the range 0-11
+# Some number in the range 0-4
 site2_to_filter = st.slider('Quarter', 0, 2, 5)
-filtered_data = data[data['Site'] == site2_to_filter]
-filtered_data[['Zone','Site','System']]
+filtered_data = data[data['Site'] == site_to_filter]
+filtered_data[['Zone','Site','Date','System']]
 
 
 #st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 #st.(filtered_data)
 
-chart_data = filtered_data
+#chart_data = filtered_data
+filtered_again = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']]
 
+st.markdown('Set as variable then st.write')
+st.write(filtered_again)
 
-st.line_chart(filtered_data['Date'],filtered_data['System'])
+st.markdown('Filtered Table')
+#st.line_chart(filtered_data['Date'],filtered_data['System'])
+st.write((filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']]
 
-
+st.markdown('Line Chart?')                                                                             
 st.markdown('Second attempt at filtered line chart')
 st.line_chart(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']].plot(x='Date', y='System'))
 
 
-
+st.markdown('Picture and Title")
 
 st.title('Proof of Concept Data App')
 title_image = Image.open("AppTitle.jpg")
@@ -77,3 +82,4 @@ site_df = stats_df[stats_df['Site'].isin(select_site)]
 
 
 st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
+st.markdown("Made it to the end.")
