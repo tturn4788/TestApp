@@ -53,9 +53,9 @@ st.write(filtered_again)
 
 st.markdown('Filtered Table')
 #st.line_chart(filtered_data['Date'],filtered_data['System'])
-st.write((filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']]
+st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']])
 
-st.markdown('Line Chart?')                                                                             
+st.markdown('Line Chart')                                                                             
 st.markdown('Second attempt at filtered line chart')
 st.line_chart(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Date','System']].plot(x='Date', y='System'))
 
