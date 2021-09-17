@@ -70,7 +70,7 @@ st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Zo
 
 st.markdown('Line Chart')                                                                             
 basically_chart = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))]
-basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System', subplots=True))
+basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System', subplots=True)
 
 st.markdown('Second attempt at filtered line chart')
 
