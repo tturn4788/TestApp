@@ -27,7 +27,7 @@ data_load_state = st.text('Loading data...')
 data = load_data(190)
 data_load_state.text("Done! (using st.cache)")
 
-ts = pd.Series(data[data.Site.eq(1)]['Site'], index=data.Date)
+ts = pd.Series(data[data.Site.eq(1)]['System'], index=data.Date)
 
 #ts = ts.cumsum()
 
