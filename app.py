@@ -27,12 +27,12 @@ def load_data(nrows):
 data = load_data(190)
 #data_load_state.text("Done! (using st.cache)")
 
-ts = pd.Series(data[data['Site']==1]['System'].values, index=pd.DataFrame(data.Date[1:20]))
+#ts = pd.Series(data[data['Site']==1]['System'].values, index=pd.DataFrame(data.Date[1:20]))
 
 
 #ts = ts.cumsum()
 
-st.line_chart(ts)
+#st.line_chart(ts)
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
