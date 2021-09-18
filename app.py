@@ -105,10 +105,9 @@ st.markdown("Third time's a charm? Nah")
 
 #From music app file 
 stats_df = pd.read_csv("SampleforWork4.csv")
-color_map_df = load_data("color_map_df.csv")
+color_map_df = pd.read_csv("color_map_df.csv")
 sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False)
 #summary_poster(sorted_site, color_map_df)
-
 
 st.markdown("### **Select Site:**")
 select_site = []
