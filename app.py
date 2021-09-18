@@ -52,6 +52,10 @@ hist_values = hist_values.set_index('Date', inplace=True)
 
 SITES = data.columns.unique()
 SITES_SELECTED = st.multiselect('Select countries', SITES)
+# Mask to filter dataframe
+mask_site = data['country'].isin(SITES_SELECTED)
+
+data_mask = data[mask_site]
 
 #replace if the above works
 #all_columns_names= data.columns.tolist()
