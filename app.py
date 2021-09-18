@@ -57,7 +57,7 @@ SITES_SELECTED = st.multiselect('Select countries', SITES)
 #all_columns_names= data.columns.tolist()
 #selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
-s = data[selected_column_names[0]].str.strip().value_counts()
+s = data[SITES_SELECTED[0]].str.strip().value_counts()
 
 'with interactive:'
 with interactive:
