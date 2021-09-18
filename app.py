@@ -20,7 +20,7 @@ df = pd.DataFrame({
 import plotly.express as px
 
 fig = px.bar(df, x="Fruit", y="Number Eaten", color="Contestant", barmode="group")
-fig.show()
+st.show(fig)
 
 
 # Graph Objects
