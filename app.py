@@ -108,7 +108,7 @@ stats_df = pd.read_csv("SampleforWork4.csv")
 color_map_df = pd.read_csv("color_map_df.csv")
 sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False)
 #summary_poster(sorted_site, color_map_df)
-
+st.selection()
 st.markdown("### **Select Site:**")
 select_site = []
 select_site.append(st.selectbox(select_site, stats_df.columns))
