@@ -28,7 +28,7 @@ data = load_data(190)
 #data_load_state.text("Done! (using st.cache)")
 
 ts = pd.Series(data[data['Site']==1]['System'].values, index=pd.DataFrame(data.Date[1:20]))
-ts.plot()
+st.plot(ts)
 
 #ts = ts.cumsum()
 
