@@ -93,7 +93,7 @@ st.markdown("Third time's a charm? Nah")
     # legend=alt.Legend(title='Animals by year')
 #)
 
-st.altair_chart(basic_chart)
+#st.altair_chart(basic_chart)
 
 
 st.markdown('Picture and Title')
