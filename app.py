@@ -6,7 +6,11 @@ import streamlit as st
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import altair as alt
+import plotly.express as px
 
+
+#create a canvas for each item
+interactive =  st.beta_container()
 
 
 st.markdown('Picture and Title')
