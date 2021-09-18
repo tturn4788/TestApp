@@ -44,6 +44,26 @@ if st.checkbox('Show raw data'):
 hist_values = data[['Site','Date','System']]
 hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
+
+
+all_columns_names= data.columns.tolist()
+selected_column_names = st.multiselect("select column to plot",all_columns_names)
+
+s = data[selected_column_names[0]].str.strip().value_counts()
+
+'with interactive:'
+with interactive:
+    fig = go.Figure()
+    for name,group in data.groupby(selected_column_names[0]):
+        trace =go.Histogram()
+        trace.name = name 
+        trace.x = group[selected_column_names[1]]
+        fig.add_trace(trace)
+    fig.show()
+        
+
+
+
 #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
