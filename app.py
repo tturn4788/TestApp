@@ -7,6 +7,11 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import altair as alt
 
+st.markdown('Picture and Title')
+
+st.title('Proof of Concept Data App')
+title_image = Image.open("AppTitle.jpg")
+st.image(title_image)
 st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
 
 DATE_COLUMN = 'Date'
@@ -96,16 +101,12 @@ st.markdown("Third time's a charm? Nah")
 #st.altair_chart(basic_chart)
 
 
-st.markdown('Picture and Title')
 
-st.title('Proof of Concept Data App')
-title_image = Image.open("AppTitle.jpg")
-st.image(title_image)
 
 #From music app file 
-stats_df = load_data("SampleforWork4.csv")
+stats_df = pd.read_csv("SampleforWork4.csv")
 color_map_df = load_data("color_map_df.csv")
-sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False).index
+sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False)
 #summary_poster(sorted_site, color_map_df)
 
 
