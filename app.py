@@ -31,7 +31,7 @@ ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=10
 
 ts = ts.cumsum()
 
-ts.plot()
+st.Line_chart(ts)
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
