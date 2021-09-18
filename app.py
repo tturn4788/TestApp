@@ -28,7 +28,7 @@ data = load_data(190)
 #data_load_state.text("Done! (using st.cache)")
 
 ts = pd.Series(data[data['Site']==1]['System'].values, index=pd.DataFrame(data.Date[1:20]))
-st.line_chart(ts)
+
 
 #ts = ts.cumsum()
 
@@ -40,6 +40,9 @@ if st.checkbox('Show raw data'):
 
 #st.subheader('Number of pickups by hour')
 hist_values = data[['Site','Date','System']]
+hist_values.set_index('Date', inplace=True)
+df.groupby('Site')['System'].plot(legend=True)
+
 st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 5, 10)
