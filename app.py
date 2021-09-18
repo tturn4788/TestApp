@@ -27,6 +27,12 @@ data_load_state = st.text('Loading data...')
 data = load_data(190)
 data_load_state.text("Done! (using st.cache)")
 
+ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
+
+ts = ts.cumsum()
+
+ts.plot()
+
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
@@ -85,11 +91,7 @@ st.markdown('Second attempt at filtered line chart')
 
 'Heres the problem.'
 
-ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 
-ts = ts.cumsum()
-
-ts.plot()
 #filter_data = basicc_chart[['Date','Site','System']]
 #filter_data.groupby('Site').plot(x='Date', y = 'System')
 
