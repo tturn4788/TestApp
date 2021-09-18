@@ -86,10 +86,10 @@ st.markdown("Third time's a charm? Nah")
 
 
 # Basic Altair line chart where it picks automatically the colors for the lines
-alt.Chart(basicc_chart).mark_line().encode(
-    x=['Date'],
-    y=['System'],
-    color=['Site'],
+#alt.Chart(basicc_chart).mark_line().encode(
+    #x=['Date'],
+    #y=['System'],
+    #color=['Site'],
     # legend=alt.Legend(title='Animals by year')
 )
 
