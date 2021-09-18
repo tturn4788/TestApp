@@ -34,7 +34,8 @@ siting = st.slider('Site', 1, 5, 10)
 'Before'
 subbed = data[(data.Site.eq(siting))]
 st.line_chart(subbed[['Date','System']])
-subbed_twice = subbed.plot(x='Date', y='System', subplots=True)
+subbed.plot()
+
 
 st.line_chart(subbed_twice)
 st.display(subbed_twice)
