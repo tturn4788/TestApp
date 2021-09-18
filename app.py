@@ -110,7 +110,7 @@ sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=F
 #summary_poster(sorted_site, color_map_df)
 
 st.markdown("### **Select Site:**")
-select_site = []
+select_site = [i for i in stats_df.columns]
 select_site.append(st.selectbox('', sorted_site))
 
 #Filter df based on selection
