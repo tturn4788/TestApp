@@ -29,7 +29,7 @@ data_load_state.text("Done! (using st.cache)")
 
 ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 
-ts = ts.cumsum()
+#ts = ts.cumsum()
 
 st.Line_chart(ts)
 
