@@ -65,7 +65,7 @@ with interactive:
     for name,group in data.groupby(SITES_SELECTED[0]):
         trace =go.Histogram()
         trace.name = name 
-        trace.x = group[selected_column_names[1]]
+        trace.x = group[SITES_SELCTED[1]]
         fig.add_trace(trace)
     fig.show()
         
