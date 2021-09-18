@@ -38,7 +38,7 @@ subbed.plot()
 
 
 st.line_chart(subbed)
-st.display(subbed)
+st.write(subbed)
 'After'
 st.write(subbed_twice)
 
