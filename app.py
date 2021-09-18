@@ -78,7 +78,8 @@ basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='Syste
 
 st.markdown('Second attempt at filtered line chart')
 
-filter_data = basicc_chart[['Date','Site','System']]
+'Heres the problem.'
+filter_data = basicc_chart[['Date','Site','System']].set_index('Date').groupby(['Site'])
 st.line_chart(filter_data)
 
 st.markdown("Third time's a charm? Nah")
