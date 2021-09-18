@@ -75,12 +75,12 @@ st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Zo
 st.markdown('Line Chart')                                                                             
 basically_chart = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))]
 basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System', subplots=True)
-
+basicc_chart.plot()
 st.markdown('Second attempt at filtered line chart')
 
 'Heres the problem.'
-filter_data = basicc_chart[['Date','Site','System']]
-filter_data.groupby('Site').plot(x='Date', y = 'System')
+#filter_data = basicc_chart[['Date','Site','System']]
+#filter_data.groupby('Site').plot(x='Date', y = 'System')
 
 st.markdown("Third time's a charm? Nah")
 
