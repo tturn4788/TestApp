@@ -112,7 +112,7 @@ sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=F
 select_site = [1]
 #Filter df based on selection
 
-stats_df[stats_df['Site'].isin(select_site)]
+stats_df[stats_df['Site'].isin(select_site)].plot(x='Date',y=['System','System1','System2'])
 
 
 st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
