@@ -23,11 +23,11 @@ def load_data(nrows):
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
 
-data_load_state = st.text('Loading data...')
+#data_load_state = st.text('Loading data...')
 data = load_data(190)
-data_load_state.text("Done! (using st.cache)")
+#data_load_state.text("Done! (using st.cache)")
 
-ts = (data.Site.eq(1).System.cumsum(), index=data.Date)
+ts = pd.Series(data.Site.eq(1).System.cumsum(), index=data.Date)
 
 #ts = ts.cumsum()
 
