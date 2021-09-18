@@ -37,13 +37,13 @@ st.line_chart(subbed[['Date','System']])
 subbed.plot()
 
 
-st.line_chart(subbed_twice)
-st.display(subbed_twice)
+st.line_chart(subbed)
+st.display(subbed)
 'After'
 st.write(subbed_twice)
 
 'And even more after'
-df_nums_filtered[df_nums_filtered.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
+data[data.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
 
 
 # Some number in the range 0-11
