@@ -41,7 +41,7 @@ if st.checkbox('Show raw data'):
 #st.subheader('Number of pickups by hour')
 hist_values = data[['Site','Date','System']]
 hist_values.set_index('Date', inplace=True)
-'hist_values.groupby('Site')['System'].plot(legend=True)'
+'hist_values.groupby("Site")["System"].plot(legend=True)'
 hist_values.groupby('Site')['System'].plot(legend=True)
 
 'st.line_chart(hist_values)'
