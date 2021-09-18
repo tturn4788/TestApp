@@ -61,7 +61,7 @@ data_mask = data[mask_site]
 #all_columns_names= data.columns.tolist()
 #selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
-s = data[SITES_SELECTED[0]].value_counts()
+#s = data[SITES_SELECTED[0]].count()
 
 'with interactive:'
 with interactive:
