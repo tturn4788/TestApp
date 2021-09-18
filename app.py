@@ -84,6 +84,12 @@ st.write(basicc_chart)
 st.markdown('Second attempt at filtered line chart')
 
 'Heres the problem.'
+
+ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
+
+ts = ts.cumsum()
+
+ts.plot()
 #filter_data = basicc_chart[['Date','Site','System']]
 #filter_data.groupby('Site').plot(x='Date', y = 'System')
 
