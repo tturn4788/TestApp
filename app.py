@@ -55,7 +55,7 @@ SITES_SELECTED = st.multiselect('Select countries', SITES)
 # Mask to filter dataframe
 mask_site = data.columns.isin(SITES_SELECTED)
 
-data_mask = data[mask_site]
+data_mask = data[data[mask_site]]
 
 #replace if the above works
 #all_columns_names= data.columns.tolist()
