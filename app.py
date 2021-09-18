@@ -52,11 +52,13 @@ st.line_chart(hist_values)
 siting = st.slider('Site', 1, 5, 10)
 'Before'
 subbed = data[(data.Site.eq(siting))]
+"st.line_chart(subbed[['Date','System']])"
 st.line_chart(subbed[['Date','System']])
 #subbed.plot()
 
-
+'st.line_chart(subbed)'
 st.line_chart(subbed)
+'st.write(subbed)'
 st.write(subbed)
 'After'
 #st.write(subbed_twice)
