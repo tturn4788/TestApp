@@ -78,14 +78,14 @@ basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='Syste
 
 st.markdown('Second attempt at filtered line chart')
 
-#filter_data = basicc_chart[['Date','Site','System']]
-#st.line_chart(filter_data)
+filter_data = basicc_chart[['Date','Site','System']]
+st.line_chart(filter_data)
 
 st.markdown("Third time's a charm? Nah")
 
 
 # Basic Altair line chart where it picks automatically the colors for the lines
-basic_chart = alt.Chart(basicc_chart).mark_line().encode(
+alt.Chart(basicc_chart).mark_line().encode(
     x=['Date'],
     y=['System'],
     color=['Site'],
