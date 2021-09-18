@@ -42,7 +42,7 @@ if st.checkbox('Show raw data'):
 hist_values = data[['Site','Date','System']]
 hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
-hist_values.groupby('Site')['System'].plot(legend=True)
+hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
 st.line_chart(hist_values)
