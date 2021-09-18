@@ -34,7 +34,7 @@ for contestant, group in df.groupby("Contestant"):
 fig.update_layout(legend_title_text = "Contestant")
 fig.update_xaxes(title_text="Fruit")
 fig.update_yaxes(title_text="Number Eaten")
-fig.show()
+make_subplots(fig)
 
 
 st.markdown('Picture and Title')
