@@ -100,7 +100,11 @@ st.markdown("Third time's a charm? Nah")
 
 #st.altair_chart(basic_chart)
 
+ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 
+ts = ts.cumsum()
+
+ts.plot()
 
 
 #From music app file 
