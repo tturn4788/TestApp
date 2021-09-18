@@ -40,7 +40,7 @@ subbed.plot()
 st.line_chart(subbed)
 st.write(subbed)
 'After'
-st.write(subbed_twice)
+#st.write(subbed_twice)
 
 'And even more after'
 data[data.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
