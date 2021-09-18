@@ -27,7 +27,7 @@ data_load_state = st.text('Loading data...')
 data = load_data(190)
 data_load_state.text("Done! (using st.cache)")
 
-ts = (data.Site.eq(1).System.value, index=data.Date)
+ts = (data.Site.eq(1).System.cumsum(), index=data.Date)
 
 #ts = ts.cumsum()
 
