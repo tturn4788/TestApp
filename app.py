@@ -81,7 +81,7 @@ siting = st.slider('Site', 1, 5, 10)
 'Before'
 subbed = data[(data.Site.eq(siting))]
 st.line_chart(subbed[['Date','System']])
-subbed.plot()
+#subbed.plot()
 
 
 st.line_chart(subbed)
