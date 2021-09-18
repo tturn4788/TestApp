@@ -29,7 +29,7 @@ data_load_state.text("Done! (using st.cache)")
 
 ts = pd.Series(data.Site.eq(1), index=data.Date)
 
-#ts = ts.cumsum()
+ts = ts.cumsum()
 
 st.line_chart(ts)
 
