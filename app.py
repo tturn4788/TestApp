@@ -50,15 +50,19 @@ hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
 
 
-all_columns_names= data.columns.tolist()
-selected_column_names = st.multiselect("select column to plot",all_columns_names)
+SITES = data.columns.unique()
+SITES_SELECTED = st.multiselect('Select countries', SITES)
+
+#replace if the above works
+#all_columns_names= data.columns.tolist()
+#selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
 s = data[selected_column_names[0]].str.strip().value_counts()
 
 'with interactive:'
 with interactive:
     fig = go.Figure()
-    for name,group in data.groupby(selected_column_names[0]):
+    for name,group in data.groupby(SITES_SELECTED[0]):
         trace =go.Histogram()
         trace.name = name 
         trace.x = group[selected_column_names[1]]
