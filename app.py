@@ -56,7 +56,7 @@ col1, col2 = st.beta_columns(2)
 
 # Mask to filter dataframe
 'Create a custom table by selecting columns to display'
-withcol1:
+with col1:
     COLUMNS = data.columns
     COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
     mask_site = data[COLUMNS_SELECTED]
