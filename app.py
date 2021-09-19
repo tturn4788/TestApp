@@ -178,54 +178,9 @@ filtered_data[['Zone','Site','Date','System']]
 #filtered_data[ = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
 
 st.markdown('Set as variable then st.write')
-st.write(filtered_data)
-
-st.markdown('Filtered Table')
-#st.line_chart(filtered_data['Date'],filtered_data['System'])
-st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))])
-
-st.markdown('Line Chart')                                                                             
-basically_chart = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))]
-basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System')
-st.write(basicc_chart)
-st.markdown('Second attempt at filtered line chart')
-
-'Heres the problem.'
+st.write(filtered_data.Date.dt.quarter.eq(site_to_filter)
 
 
-#filter_data = basicc_chart[['Date','Site','System']]
-#filter_data.groupby('Site').plot(x='Date', y = 'System')
-
-st.markdown("Third time's a charm? Nah")
-
-
-# Basic Altair line chart where it picks automatically the colors for the lines
-#alt.Chart(basicc_chart).mark_line().encode(
-    #x=['Date'],
-    #y=['System'],
-    #color=['Site'],
-    # legend=alt.Legend(title='Animals by year')
-#)
-
-#st.altair_chart(basic_chart)
-
-ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
-
-
-st.line_chart(ts)
-
-
-
-#From music app file 
-stats_df = pd.read_csv("SampleforWork4.csv")
-color_map_df = pd.read_csv("color_map_df.csv")
-sorted_site = stats_df.groupby('Site')['System'].count().sort_values(ascending=False)
-#summary_poster(sorted_site, color_map_df)
-
-select_site = [1]
-#Filter df based on selection
-
-stats_df['Site'].isin(select_site).plot(x='Date',y=['System','System1','System2'])
 
 
 st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
