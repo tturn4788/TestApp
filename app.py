@@ -46,7 +46,7 @@ data = load_data(190)
 
 #st.line_chart(ts)
 
-with st.container():
+with st.beta_container():
     if st.checkbox('Show raw data'):
         st.subheader('Raw data')
         st.write(data)
