@@ -12,7 +12,7 @@ import plotly.express as px
 #create a canvas for each item
 interactive =  st.beta_container()
 
-data = load_data(190)
+
 st.markdown('Picture and Title')
 
 st.title('Proof of Concept Data App')
@@ -33,7 +33,7 @@ def load_data(nrows):
 SITES = data.Site.unique()
 SYSTEMS = ['System','System1','System2']
 
-
+data = load_data(190)
     
 
 #data_load_state = st.text('Loading data...')
@@ -87,17 +87,6 @@ fig = px.line(data, x="Date", y="System", color="Site")
 fig.show()
 
 
-'Graph Objects'
-
-
-
-#fig = go.Figure()
-#hist_values = data[['Site','Date','System']]
-#hist_values = hist_values.set_index('Date', inplace=True)
-
-#for Site, System in hist_values.groupby("Site"):
- #   st.line_chart(["Date"], ['System'])
-    #fig.show()
 
 
 
@@ -106,58 +95,62 @@ fig.show()
 
 
 
+with st.beta_container:
+    hist_values = data[['Site','Date','System']]
+    hist_values = hist_values.set_index('Date', inplace=True)
 
 
+    #hist_values.plot(legend=True)
 
-
-hist_values = data[['Site','Date','System']]
-hist_values = hist_values.set_index('Date', inplace=True)
-
-
-#hist_values.plot(legend=True)
-
-'st.line_chart(hist_values)'
-st.line_chart(hist_values)
+    'st.line_chart(hist_values)'
+    st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 10)
-with col1:
-    'Before'
-    subbed = data[(data.Site.eq(siting))]
-    
-    
-with col2:
-    "st.line_chart(subbed[['Date','System']])"
-    st.line_chart(subbed[['Date','System']])
-   
-with col1:
-    'st.write(subbed)'
-    st.write(subbed)
 
-with col2:
-    'st.line_chart(subbed)'
-    st.line_chart(subbed)
-
-  
-
-    
-'After'
-#st.write(subbed_twice)
-
-'And even more after'
-data[data.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
+with st.beta_container:
+    with col1:
+        'Before'
+        subbed = data[(data.Site.eq(siting))]
 
 
-# Some number in the range 0-11
-site_to_filter = st.slider('Site', 0, 6, 10)
-filtered_data = data[data['Site'] == site_to_filter]
+    with col2:
+        "st.line_chart(subbed[['Date','System']])"
+        st.line_chart(subbed[['Date','System']])
 
-st.write(filtered_data)
+with st.beta_container:
+    with col1:
+        'st.write(subbed)'
+        st.write(subbed)
+
+    with col2:
+        'st.line_chart(subbed)'
+        st.line_chart(subbed)
+
+with st.beta_container:
+    with col1:
 
 
-# Some number in the range 0-4
-site2_to_filter = st.slider('Quarter', 0, 2, 5)
-filtered_data = data[data['Site'] == site_to_filter]
-filtered_data[['Zone','Site','Date','System']]
+
+        'After'
+        #st.write(subbed_twice)
+
+    with col2:
+        'And even more after'
+        data[data.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
+
+
+with beta_container:
+    # Some number in the range 0-11
+    site_to_filter = st.slider('Site', 0, 6, 10)
+    filtered_data = data[data['Site'] == site_to_filter]
+
+    st.write(filtered_data)
+
+with beta_container:
+    # Some number in the range 0-4
+    site2_to_filter = st.slider('Quarter', 0, 2, 5)
+    filtered_data = data[data['Site'] == site_to_filter]
+    st.write(filtered_data[['Zone','Site','Date','System']])
 
 
 #st.subheader('Map of all pickups at %s:00' % hour_to_filter)
@@ -165,9 +158,9 @@ filtered_data[['Zone','Site','Date','System']]
 
 #chart_data = filtered_data
 #filtered_data[ = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
-
-st.markdown('Set as variable then st.write')
-st.write(filtered_data[filtered_data.Date.dt.quarter.eq(site_to_filter)])
+with st.beta_container:
+    st.markdown('Set as variable then st.write')
+    st.write(filtered_data[filtered_data.Date.dt.quarter.eq(site_to_filter)])
 
 
 
