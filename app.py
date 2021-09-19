@@ -62,11 +62,12 @@ col1, col2 = st.beta_columns(2)
 COLUMNS = data.columns
 COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
 mask_site = data[COLUMNS_SELECTED]
-st.write(mask_site)
+col1.st.write(mask_site)
+col2.st.line_chart(mask_site)
 'mask_site'
-data_mask = data[mask_site]
-col1.st.write(data_mask)
-col2.st.line_chart(data_mask)
+#data_mask = data[mask_site]
+#col1.st.write(data_mask)
+#col2.st.line_chart(mask_site)
 'data mask'
 #replace if the above works
 all_columns_names= data.columns
