@@ -51,7 +51,14 @@ if st.checkbox('Show raw data'):
 
 
 SITES = data.Site.unique()
-SITES_SELECTED = st.multiselect('Select countries', SITES)
+SITES_SELECTED = st.multiselect('Select site(s)', SITES)
+COLUMNS = data.columns
+COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
+SYSTEMS = ['System','System1','System2']
+SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
+
+
+
 # Mask to filter dataframe
 mask_site = data['Site'].isin(SITES_SELECTED)
 
