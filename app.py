@@ -66,7 +66,7 @@ st.write(mask_site)
 'mask_site'
 data_mask = data[mask_site]
 col1.st.write(data_mask)
-col2.st.plot(data_mask)
+col2.st.line_chart(data_mask)
 'data mask'
 #replace if the above works
 all_columns_names= data.columns
