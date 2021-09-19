@@ -105,7 +105,7 @@ fig.show()
 #fig = go.Figure()
 
 for Site, group in data.groupby("Site"):
-    st.line_chart(x=group["Date"], y=group["System"])
+    st.line_chart(group["Date"], group["System"])
     #fig.show()
 
 
