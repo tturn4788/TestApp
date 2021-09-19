@@ -172,7 +172,7 @@ filtered_data[['Zone','Site','Date','System']]
 #st.(filtered_data)
 
 #chart_data = filtered_data
-filtered_again = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Zone','Site','Date','System']]
+filtered_again = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))]['Zone','Site','Date','System']
 
 st.markdown('Set as variable then st.write')
 st.write(filtered_again)
