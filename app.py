@@ -82,7 +82,7 @@ SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
     
 
-fig = px.line(data["Date"], data["System"], color="Site")
+fig = px.line(dataframe, data["Date"], data["System"])
 fig.show()
 
 
