@@ -90,6 +90,37 @@ with interactive:
 """
 
 
+
+fig = px.line(data, x="Date", y="System", color="Site")
+fig.show()
+
+
+# Graph Objects
+
+import plotly.graph_objects as go
+
+fig = go.Figure()
+for Zone, group in data.groupby("Zone"):
+    fig.add_trace(go.Bar(x=group["Date"], y=group["System"], name=Site))
+fig.update_layout(legend_title_text = "Contestant")
+fig.update_xaxes(title_text="Fruit")
+fig.update_yaxes(title_text="Number Eaten")
+fig.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
