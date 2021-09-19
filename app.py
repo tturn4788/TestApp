@@ -62,7 +62,7 @@ with st.beta_container():
 col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
 # Mask to filter dataframe
-with st.container():
+with st.beta_container():
     with col1:
         'Create a custom table:'
         COLUMNS = data.columns
