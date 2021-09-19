@@ -83,9 +83,9 @@ SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 df = data[['Date', 'Site','System']]
 df.set_index('Date', inplace=True)
 
-fig = px.line(df, x = 'Date', y='System')
-
-fig = px.line(data, "Date", "System")
+fig = px.line(df, y='System')
+fig.show()
+fig = px.line(data, "System")
 fig.show()
 
 
