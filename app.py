@@ -172,10 +172,10 @@ filtered_data[['Zone','Site','Date','System']]
 #st.(filtered_data)
 
 #chart_data = filtered_data
-filtered_again = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
+#filtered_data[ = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
 
 st.markdown('Set as variable then st.write')
-st.write(filtered_again)
+st.write(filtered_data)
 
 st.markdown('Filtered Table')
 #st.line_chart(filtered_data['Date'],filtered_data['System'])
