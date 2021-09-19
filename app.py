@@ -23,14 +23,12 @@ st.markdown("This app is meant as a proof of concept to demonstrate the utility 
 DATE_COLUMN = 'Date'
 DATA_URL = ('SampleforWork4.csv')
 
-@st.cache 
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
 
+data = pd.read_csv(DATA_URL, nrows=nrows)
+data['Date'] = pd.to_datetime(data['Date])
+    return data
+data.dropna()
 #Variables for later
-data = load_data(190)
 SITES = data.Site.unique()
 SYSTEMS = ['System','System1','System2']
 
@@ -48,11 +46,11 @@ SYSTEMS = ['System','System1','System2']
 
 #st.line_chart(ts)
 
-with st.beta_container:
-    if st.checkbox('Show raw data'):
-        st.subheader('Raw data')
-        st.write(data)
+if st.checkbox('Show raw data'):
+    st.subheader('Raw data')
+    st.write(data)
 
+                                   
 #st.subheader('Number of pickups by hour')
 #hist_values = data[['Site','Date','System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
