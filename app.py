@@ -208,8 +208,8 @@ st.markdown("Third time's a charm? Nah")
 
 ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 
-ts1 = ts.mean()
-st.line_chart(ts.index, ts1)
+
+st.line_chart(ts1)
 
 
 
