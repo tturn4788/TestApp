@@ -179,11 +179,11 @@ st.write(filtered_again)
 
 st.markdown('Filtered Table')
 #st.line_chart(filtered_data['Date'],filtered_data['System'])
-st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))][['Zone','Site','Date','System']])
+st.write(filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))])
 
 st.markdown('Line Chart')                                                                             
 basically_chart = filtered_data[(filtered_data.Date.dt.quarter.eq(site2_to_filter))]
-basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System', subplots=True)
+basicc_chart = basically_chart[['Site','Date','System']].plot(x='Date', y='System')
 st.write(basicc_chart)
 st.markdown('Second attempt at filtered line chart')
 
