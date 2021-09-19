@@ -60,6 +60,9 @@ SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
 
 # Mask to filter dataframe
+'Create a custom table by selecting columns to display'
+COLUMNS = data.columns
+COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
 mask_site = data[COLUMNS_SELECTED]
 st.write(mask_site)
 'mask_site'
@@ -67,10 +70,10 @@ data_mask = data[mask_site]
 st.write(data_mask)
 'data mask'
 #replace if the above works
-#all_columns_names= data.columns.tolist()
-#selected_column_names = st.multiselect("select column to plot",all_columns_names)
+all_columns_names= data.columns
+selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
-#s = data[SITES_SELECTED[0]].count()
+s = data[SITES_SELECTED[0]].count()
 
 'with interactive:'
 with interactive:
