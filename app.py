@@ -45,12 +45,12 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 #st.subheader('Number of pickups by hour')
-hist_values = data[['Site','Date','System']]
-hist_values = hist_values.set_index('Date', inplace=True)
+#hist_values = data[['Site','Date','System']]
+#hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
 
 
-SITES = data.Site.unique()
+SITES = data.columns
 SITES_SELECTED = st.multiselect('Select countries', SITES)
 # Mask to filter dataframe
 mask_site = data['Site'].isin(SITES_SELECTED)
