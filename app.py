@@ -178,7 +178,7 @@ filtered_data[['Zone','Site','Date','System']]
 #filtered_data[ = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
 
 st.markdown('Set as variable then st.write')
-st.write(filtered_data.Date.dt.quarter.eq(site_to_filter))
+st.write(filtered_data[filtered_data.Date.dt.quarter.eq(site_to_filter)])
 
 
 
