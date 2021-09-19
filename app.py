@@ -25,8 +25,8 @@ DATA_URL = ('SampleforWork4.csv')
 
 
 data = pd.read_csv(DATA_URL, nrows=nrows)
-data['Date'] = pd.to_datetime(data['Date])
-    return data
+data['Date'] = pd.to_datetime(data['Date'])
+
 data.dropna()
 #Variables for later
 SITES = data.Site.unique()
