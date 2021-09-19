@@ -121,7 +121,8 @@ for Zone, group in data.groupby("Zone"):
 
 
 
-
+hist_values = data[['Site','Date','System']]
+hist_values = hist_values.set_index('Date', inplace=True)
 
 
 #hist_values.plot(legend=True)
