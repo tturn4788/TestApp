@@ -12,7 +12,7 @@ import plotly.express as px
 #create a canvas for each item
 interactive =  st.beta_container()
 
-
+data = load_data(190)
 st.markdown('Picture and Title')
 
 st.title('Proof of Concept Data App')
@@ -37,7 +37,7 @@ SYSTEMS = ['System','System1','System2']
     
 
 #data_load_state = st.text('Loading data...')
-data = load_data(190)
+
 #data_load_state.text("Done! (using st.cache)")
 
 #ts = pd.Series(data[data['Site']==1]['System'].values, index=pd.DataFrame(data.Date[1:20]))
@@ -47,7 +47,7 @@ data = load_data(190)
 
 #st.line_chart(ts)
 
-with st.beta_container():
+with st.beta_container:
     if st.checkbox('Show raw data'):
         st.subheader('Raw data')
         st.write(data)
