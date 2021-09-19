@@ -29,7 +29,7 @@ def load_data(nrows):
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
 @st.cache
-def find_columns(data)
+def find_columns(data):
     SITES = data.Site.unique()
     SYSTEMS = ['System','System1','System2']
     return SITES, SYSTEMS
