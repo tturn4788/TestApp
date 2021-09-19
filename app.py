@@ -139,13 +139,16 @@ with col1:
 with col2:
     "st.line_chart(subbed[['Date','System']])"
     st.line_chart(subbed[['Date','System']])
+   
+with col1:
+    'st.write(subbed)'
+    st.write(subbed)
+
+with col2:
     'st.line_chart(subbed)'
     st.line_chart(subbed)
 
   
-with col1:
-    'st.write(subbed)'
-    st.write(subbed)
 
     
 'After'
