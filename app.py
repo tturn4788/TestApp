@@ -63,9 +63,9 @@ COLUMNS = data.columns
 COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
 mask_site = data[COLUMNS_SELECTED]
 with col1:
-    st.write(mask_site))
+    st.write(mask_site)
 with col2:
-    go.line(mask_site))
+    go.line(mask_site)
 'mask_site'
 #data_mask = data[mask_site]
 #col1.st.write(data_mask)
