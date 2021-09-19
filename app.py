@@ -131,16 +131,23 @@ hist_values = hist_values.set_index('Date', inplace=True)
 st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 10)
-'Before'
-subbed = data[(data.Site.eq(siting))]
-"st.line_chart(subbed[['Date','System']])"
-st.line_chart(subbed[['Date','System']])
-#subbed.plot()
+with col1:
+    'Before'
+    subbed = data[(data.Site.eq(siting))]
+    end with
+    
+with col2:
+    "st.line_chart(subbed[['Date','System']])"
+    st.line_chart(subbed[['Date','System']])
+    'st.line_chart(subbed)'
+    st.line_chart(subbed)
+    end with
+  
+with col1:
+    'st.write(subbed)'
+    st.write(subbed)
 
-'st.line_chart(subbed)'
-st.line_chart(subbed)
-'st.write(subbed)'
-st.write(subbed)
+    
 'After'
 #st.write(subbed_twice)
 
