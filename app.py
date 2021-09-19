@@ -50,19 +50,16 @@ if st.checkbox('Show raw data'):
 'hist_values.groupby("Site")["System"].plot(legend=True)'
 
 
-SITES = data.Site.unique()
-SITES_SELECTED = st.multiselect('Select site(s)', SITES)
-SYSTEMS = ['System','System1','System2']
-SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
+
 
 col1, col2 = st.beta_columns(2)
 
 # Mask to filter dataframe
 'Create a custom table by selecting columns to display'
-COLUMNS = data.columns
-COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
-mask_site = data[COLUMNS_SELECTED]
-with col1:
+withcol1:
+    COLUMNS = data.columns
+    COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
+    mask_site = data[COLUMNS_SELECTED]
     st.write(mask_site)
 #with col2:
     #go.line(mask_site)
@@ -71,11 +68,16 @@ with col1:
 #col1.st.write(data_mask)
 #col2.st.line_chart(mask_site)
 'data mask'
-#replace if the above works
-all_columns_names= data.columns
-selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
-s = data[SITES_SELECTED[0]].count()
+SITES = data.Site.unique()
+SITES_SELECTED = st.multiselect('Select site(s)', SITES)
+SYSTEMS = ['System','System1','System2']
+SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
+#replace if the above works
+#all_columns_names= data.columns
+#selected_column_names = st.multiselect("select column to plot",all_columns_names)
+
+#s = data[SITES_SELECTED[0]].count()
 """
 'with interactive:'
 with interactive:
