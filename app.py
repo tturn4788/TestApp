@@ -183,5 +183,5 @@ st.write(filtered_data.Date.dt.quarter.eq(site_to_filter)
 
 
 
-st.markdown("This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files")
+st.markdown('This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files.')
 st.markdown("Made it to the end.")
