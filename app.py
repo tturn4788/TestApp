@@ -60,7 +60,7 @@ SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
 
 # Mask to filter dataframe
-mask_site = data['Site'].isin(SITES_SELECTED)
+mask_site = data.isin(COLUMNS_SELECTED)
 
 data_mask = data[mask_site]
 st.write(data_mask)
