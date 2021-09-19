@@ -63,7 +63,7 @@ SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 mask_site = data['Site'].isin(SITES_SELECTED)
 
 data_mask = data[mask_site]
-
+st.write(data_mask)
 #replace if the above works
 #all_columns_names= data.columns.tolist()
 #selected_column_names = st.multiselect("select column to plot",all_columns_names)
