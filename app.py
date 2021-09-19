@@ -209,7 +209,8 @@ st.markdown("Third time's a charm? Nah")
 ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 
 ts1 = ts.mean()
-ts1.plot()
+st.line_chart(ts1)
+
 
 
 #From music app file 
