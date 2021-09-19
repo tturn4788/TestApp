@@ -30,10 +30,11 @@ def load_data(nrows):
     return data
 
 #Variables for later
+data = load_data(190)
 SITES = data.Site.unique()
 SYSTEMS = ['System','System1','System2']
 
-data = load_data(190)
+
     
 
 #data_load_state = st.text('Loading data...')
