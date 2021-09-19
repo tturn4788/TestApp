@@ -93,7 +93,7 @@ with interactive:
 'st.line_chart(hist_values)'
 st.line_chart(hist_values)
 
-siting = st.slider('Site', 1, 5, 10)
+siting = st.slider('Site', 1, 10)
 'Before'
 subbed = data[(data.Site.eq(siting))]
 "st.line_chart(subbed[['Date','System']])"
