@@ -77,9 +77,8 @@ with st.beta_container():
 #col2.st.line_chart(mask_site)
 'data mask'
 
-with st.sidebar():
-    SITES_SELECTED = st.multiselect('Select site(s)', SITES)
-    SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
+SITES_SELECTED = st.multiselect('Select site(s)', SITES)
+SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
     
 
