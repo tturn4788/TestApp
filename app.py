@@ -55,7 +55,7 @@ SITES_SELECTED = st.multiselect('Select site(s)', SITES)
 SYSTEMS = ['System','System1','System2']
 SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
-col1, col2 = st.columns(2)
+col1, col2 = st.column(2)
 
 # Mask to filter dataframe
 'Create a custom table by selecting columns to display'
