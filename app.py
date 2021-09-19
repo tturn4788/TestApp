@@ -106,8 +106,8 @@ fig.show()
 hist_values = data[['Site','Date','System']]
 hist_values = hist_values.set_index('Date', inplace=True)
 
-for Site, group in data.groupby("Site"):
-    st.line_chart(["Date"], group["Site"])
+for Site, group in hist_values.groupby("Site"):
+    st.line_chart(["Date"], group["System"])
     #fig.show()
 
 
