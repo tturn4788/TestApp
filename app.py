@@ -23,11 +23,17 @@ st.markdown("This app is meant as a proof of concept to demonstrate the utility 
 DATE_COLUMN = 'Date'
 DATA_URL = ('SampleforWork4.csv')
 
-@st.cache
+@st.cache 
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
+@st.cache
+def find_columns(data)
+    SITES = data.Site.unique()
+    SYSTEMS = ['System','System1','System2']
+    return SITES, SYSTEMS
+    
 
 #data_load_state = st.text('Loading data...')
 data = load_data(190)
@@ -40,9 +46,10 @@ data = load_data(190)
 
 #st.line_chart(ts)
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(data)
+with st.container():
+    if st.checkbox('Show raw data'):
+        st.subheader('Raw data')
+        st.write(data)
 
 #st.subheader('Number of pickups by hour')
 #hist_values = data[['Site','Date','System']]
@@ -53,15 +60,15 @@ if st.checkbox('Show raw data'):
 
 
 col1, col2 = st.beta_columns(2)
-
+col_1 = st.beta_columns(1)
 # Mask to filter dataframe
-
-with col1:
-    'Create a custom table:'
-    COLUMNS = data.columns
-    COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
-    mask_site = data[COLUMNS_SELECTED]
-    st.write(mask_site)
+with st.container():
+    with col1:
+        'Create a custom table:'
+        COLUMNS = data.columns
+        COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
+        mask_site = data[COLUMNS_SELECTED]
+        st.write(mask_site)
 #with col2:
     #go.line(mask_site)
 'mask_site'
@@ -70,29 +77,11 @@ with col1:
 #col2.st.line_chart(mask_site)
 'data mask'
 
-SITES = data.Site.unique()
-SITES_SELECTED = st.multiselect('Select site(s)', SITES)
-SYSTEMS = ['System','System1','System2']
-SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
-#replace if the above works
-#all_columns_names= data.columns
-#selected_column_names = st.multiselect("select column to plot",all_columns_names)
+with st.sidebar():
+    SITES_SELECTED = st.multiselect('Select site(s)', SITES)
+    SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
-#s = data[SITES_SELECTED[0]].count()
-"""
-'with interactive:'
-with interactive:
-    fig = go.Figure()
-    for name,group in data.groupby(SITES_SELECTED[0]):
-        trace =go.Histogram()
-        trace.name = name 
-        trace.x = group[SITES_SELECTED[1]]
-        fig.add_trace(trace)
-    fig.show()
-        
-"""
-
-'fig.show'
+    
 
 fig = px.line(data, x="Date", y="System", color="Site")
 fig.show()
