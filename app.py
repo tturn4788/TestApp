@@ -104,7 +104,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 
-for Site, group in data.groupby("Zone"):
+for Site, group in data.groupby("Site"):
     fig.add_trace(go.Line(x=group["Date"], y=group["System"]))
     fig.show()
 
