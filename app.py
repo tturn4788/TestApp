@@ -103,9 +103,11 @@ fig.show()
 
 
 #fig = go.Figure()
+hist_values = data[['Site','Date','System']]
+hist_values = hist_values.set_index('Date', inplace=True)
 
 for Site, group in data.groupby("Site"):
-    st.line_chart(group["Date"], group["System"])
+    st.line_chart(["Date"], group["Site"])
     #fig.show()
 
 
