@@ -80,7 +80,7 @@ with st.beta_container():
 SITES_SELECTED = st.multiselect('Select site(s)', SITES)
 SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
-df = data[['Date', 'Site','System']]
+df = data[['Site','System']]
 df.set_index('Date', inplace=True)
 
 fig = px.line(df, y='System')
