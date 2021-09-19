@@ -134,14 +134,14 @@ siting = st.slider('Site', 1, 10)
 with col1:
     'Before'
     subbed = data[(data.Site.eq(siting))]
-    end with
+    
     
 with col2:
     "st.line_chart(subbed[['Date','System']])"
     st.line_chart(subbed[['Date','System']])
     'st.line_chart(subbed)'
     st.line_chart(subbed)
-    end with
+
   
 with col1:
     'st.write(subbed)'
