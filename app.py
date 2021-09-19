@@ -60,7 +60,7 @@ col1, col2 = st.beta_columns(2)
 # Mask to filter dataframe
 'Create a custom table by selecting columns to display'
 COLUMNS = data.columns
-COLUMNS_SELECTED = col1.st.multiselect('Select column(s)', COLUMNS)
+COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
 mask_site = data[COLUMNS_SELECTED]
 st.write(mask_site)
 'mask_site'
@@ -72,7 +72,7 @@ all_columns_names= data.columns
 selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
 s = data[SITES_SELECTED[0]].count()
-
+"""
 'with interactive:'
 with interactive:
     fig = go.Figure()
@@ -83,7 +83,7 @@ with interactive:
         fig.add_trace(trace)
     fig.show()
         
-
+"""
 
 
 #hist_values.plot(legend=True)
