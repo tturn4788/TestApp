@@ -104,7 +104,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 for Zone, group in data.groupby("Zone"):
-    fig.add_trace(go.Bar(x=group["Date"], y=group["System"], name=Site))
+    fig.add_trace(go.Bar(x=group["Date"], y=group["System"], name=Zone))
     fig.update_layout(legend_title_text = "Contestant")
     fig.update_xaxes(title_text="Fruit")
     fig.update_yaxes(title_text="Number Eaten")
