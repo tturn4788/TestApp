@@ -28,7 +28,8 @@ def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
-@st.cache
+
+#Variables for later
 SITES = data.Site.unique()
 SYSTEMS = ['System','System1','System2']
 
