@@ -95,6 +95,7 @@ with st.beta_container():
 
 #fig = px.line(df, y='System')
 #fig.show()
+fig, ax = plt.subplots()
 fig = px.line(data, "System")
 st.pyplot(fig)
 
