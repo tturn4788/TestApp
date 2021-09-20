@@ -43,7 +43,7 @@ if st.checkbox('Show raw data'):
 
                                    
 #st.subheader('Number of pickups by hour')
-all_columns_names= data.columns.tolist()
+all_columns_names= data.columns.values()
 selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
 #s = data[selected_column_names].values()
@@ -54,7 +54,7 @@ fig = go.Figure()
 for name,group in data.groupby(selected_column_names[1]):
     trace =go.Line()
     trace.name = name 
-    trace.x = group[selected_column_names[1]]
+    trace.x = group[selected_column_names[]]
     fig.add_trace(trace)
 st.plotly_chart(fig)
 
