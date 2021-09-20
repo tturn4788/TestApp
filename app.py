@@ -35,16 +35,7 @@ data.set_index('Date', inplace=True)
 interactive = st.beta_container()
     
 
-#data_load_state = st.text('Loading data...')
 
-#data_load_state.text("Done! (using st.cache)")
-
-#ts = pd.Series(data[data['Site']==1]['System'].values, index=pd.DataFrame(data.Date[1:20]))
-
-
-#ts = ts.cumsum()
-
-#st.line_chart(ts)
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
@@ -52,6 +43,23 @@ if st.checkbox('Show raw data'):
 
                                    
 #st.subheader('Number of pickups by hour')
+all_columns_names= data.columns.tolist()
+selected_column_names = st.multiselect("select column to plot",all_columns_names)
+
+s = df[selected_column_names[0]].str.strip().value_counts()
+
+
+with interactive:
+    fig = go.Figure
+    for name,group in data.groupby(selected_column_names[0]):
+        trace =go.Line()
+        trace.name = name 
+        trace.x = group[selected_column_names[1]]
+        fig.add_trace(trace)
+    st.plotly_chart(fig)
+
+
+
 #hist_values = data[['Site','Date','System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
