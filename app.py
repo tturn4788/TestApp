@@ -50,8 +50,8 @@ selected_column_names = st.multiselect("select column to plot",all_columns_names
 
 
 
-fig = go.Figure
-for name,group in data.groupby(selected_column_names[0]):
+fig = go.Figure()
+for name,group in data.groupby(selected_column_names):
     trace =go.Line()
     trace.name = name 
     trace.x = group[selected_column_names[1]]
