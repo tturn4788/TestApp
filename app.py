@@ -62,6 +62,7 @@ fig = go.Figure()
 
 fig.add_trace(go.Scatter(x = data.index, y = data.System, mode = 'lines', 
                          name = 'System Chart'))
+st.plotly_chart(fig, use_container_width=True)
 
 col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
