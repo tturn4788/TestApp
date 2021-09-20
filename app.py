@@ -55,7 +55,7 @@ if st.checkbox('Show raw data'):
 #hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
 
-axs=axs
+
 fig = go.Figure()
   
 
