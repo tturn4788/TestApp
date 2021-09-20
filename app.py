@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import altair as alt
 import plotly.express as px
+import matplotlib.pyplot as plt
 
 
 st.set_page_config(layout="wide")
