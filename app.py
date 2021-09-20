@@ -117,7 +117,7 @@ with st.beta_container():
 
     with col2:
         "st.line_chart(subbed[['Date','System']])"
-        st.line_chart(subbed[['Date','System']])
+        st.line_chart(subbed['System'])
 
 with st.beta_container():
     with col1:
