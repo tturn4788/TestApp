@@ -55,8 +55,13 @@ if st.checkbox('Show raw data'):
 #hist_values = hist_values.set_index('Date', inplace=True)
 'hist_values.groupby("Site")["System"].plot(legend=True)'
 
+axs=axs
+fig = go.Figure()
+  
 
 
+fig.add_trace(go.Scatter(x = data.index, y = data.System, mode = 'lines', 
+                         name = 'System Chart'))
 
 col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
