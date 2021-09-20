@@ -11,7 +11,7 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 #create a canvas for each item
-interactive =  st.beta_container()
+
 
 
 st.markdown('Picture and Title')
@@ -25,13 +25,12 @@ DATE_COLUMN = 'Date'
 DATA_URL = ('SampleforWork4.csv')
 
 
+
 data = pd.read_csv('SampleforWork4.csv',parse_dates=['Date'])
 #data['Date'] = pd.to_datetime(data['Date'])
 data.set_index('Date', inplace=True)
 data.dropna()
 #Variables for later
-SITES = data.Site.unique()
-SYSTEMS = ['System','System1','System2']
 
 interactive = st.beta_container()
     
@@ -64,12 +63,16 @@ col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
 # Mask to filter dataframe
 with st.beta_container():
-    with col1:
-        'Create a custom table:'
-        COLUMNS = data.columns
-        COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
-        mask_site = data[COLUMNS_SELECTED]
-        st.write(mask_site)
+'Create a custom table:'
+SITES = data.Site.unique()
+SYSTEMS = ['System','System1','System2']
+SITES_SELECTED = st.multiselect('Select site(s)', SITES)
+SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
+
+COLUMNS = data.columns
+COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
+mask_site = data[SITES_SELECTED & SYSTEMS_SELECTED & COLUMNS_SELECTED]
+st.write(mask_site)
 
 
 #with col2:
@@ -80,10 +83,8 @@ with st.beta_container():
 #col2.st.line_chart(mask_site)
 'data mask'
 
-SITES_SELECTED = st.multiselect('Select site(s)', SITES)
-SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
-df = data[['Site','System']]
+mask_site.plot()
 #df.set_index('Date', inplace=True)
 
 fig = px.line(df, y='System')
@@ -112,34 +113,25 @@ st.line_chart(hist_values)
 siting = st.slider('Site', 1, 10)
 
 with st.beta_container():
-    with col1:
-        'Before'
-        subbed = data[(data.Site.eq(siting))]
+'Before'
+subbed = data[(data.Site.eq(siting))]
 
-    with col2:
-        "st.line_chart(subbed[['Date','System']])"
-        st.line_chart(subbed['System'])
+"st.line_chart(subbed[['Date','System']])"
+st.line_chart(subbed['System'])
 
 with st.beta_container():
-    with col1:
-        'st.write(subbed)'
-        st.write(subbed)
+'st.write(subbed)'
+st.write(subbed)
 
-    with col2:
-        'st.line_chart(subbed)'
-        st.line_chart(subbed)
+with col2:
+'st.line_chart(subbed)'
+st.line_chart(subbed)
 
 with st.beta_container():
-    with col1:
+'After'
+#st.write(subbed_twice)
 
-
-
-        'After'
-        #st.write(subbed_twice)
-
-    with col2:
-        'And even more after'
-        data.groupby(['Zone','Site'])[['Site','System']].mean().plot.scatter(x='Site',y = 'System')
+data.groupby(['Zone','Site'])[['Site','System']].mean().plot.scatter(x='Site',y = 'System')
 
 
 with st.beta_container():
