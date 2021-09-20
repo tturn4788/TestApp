@@ -167,7 +167,7 @@ with interactive:
 
     df[c0]
 
-df1=data.pivot_table(columns=['Zone','Site'], values='System')
+df1=data.pivot(columns=['Zone','Site'], values='System')
 #df1.reset_index()
 #to obtain the 1st column content
 #df1.reset_index().iloc[:,[0]]
