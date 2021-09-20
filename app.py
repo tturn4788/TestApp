@@ -77,7 +77,7 @@ with st.beta_container():
         d3 = data[SYSTEMS_SELECTED]
 
 
-        mask_site = data[d2 & d3]
+        mask_site = data[d2]
         st.write(mask_site)
 
 
@@ -90,7 +90,7 @@ with st.beta_container():
 'data mask'
 with interactive:
     with col2:
-       mask_site.plot()
+       mask_site[d2].plot()
 #df.set_index('Date', inplace=True)
 
 #fig = px.line(df, y='System')
