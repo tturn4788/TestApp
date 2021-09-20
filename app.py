@@ -41,32 +41,8 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 #st.write(Data["System"].plot(legend=True))
-st.write(data.groupby(['Zone','Site'])['Site','System'].plot())
+st.write(plt.line(data.groupby(['Zone','Site'])['Site','System']))
                                    
-#st.subheader('Number of pickups by hour')
-all_columns_names= data.columns.values()
-selected_column_names = st.multiselect("select column to plot",all_columns_names)
-
-#s = data[selected_column_names].values()
-
-
-
-fig = go.Figure()
-for name,group in data.groupby(selected_column_names[1]):
-    trace =go.Line()
-    trace.name = name 
-    trace.x = group[selected_column_names[2]]
-    fig.add_trace(trace)
-    st.write(fig)
-
-
-
-#hist_values = data[['Site','System']]
-#hist_values = hist_values.set_index('Date', inplace=True)
-'ue)'
-
-
-#fig = go.Figure()
 
 #fig.add_trace(data.groupby(['Site'])['System'])
 #st.line_chart(fig, use_container_width=True)
