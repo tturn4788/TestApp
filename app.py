@@ -41,7 +41,7 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 #st.write(Data["System"].plot(legend=True))
-st.write(plt.line(data.groupby(['Zone','Site'])['Site','System']))
+st.write(plt(data.groupby(['Zone','Site'])['Site','System']))
                                    
 
 #fig.add_trace(data.groupby(['Site'])['System'])
