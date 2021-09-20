@@ -98,7 +98,7 @@ with st.beta_container():
 #fig.show()
 fig, ax = plt.subplots()
 fig = px.line(data, "System")
-st.plotly_chart(fig)
+st.plotly_chart(fig=plt)
 
 
 #asd
