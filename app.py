@@ -83,7 +83,7 @@ with st.beta_container():
 #col1.st.write(data_mask)
 #col2.st.line_chart(mask_site)
 'data mask'
-
+with interactive:
     with col2:
        mask_site.plot()
 #df.set_index('Date', inplace=True)
