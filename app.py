@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import altair as alt
 import plotly.express as px
+import seaborn as sns
 
 
 #create a canvas for each item
@@ -178,7 +179,9 @@ df1=data.pivot(columns=['Zone','Site'], values='System')
 st.write(df1)
    
              
-'Probably nothing.'             
+'Probably nothing.'
+swarm_plot = sns.heatmap(df1, cmap="YlGnBu", annot=True, cbar=False)
+plt.show()
 st.write(data.pivot(columns=['Zone','Site'], values='System'))
 
 
