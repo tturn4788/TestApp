@@ -177,7 +177,7 @@ df1=data.pivot(columns=['Zone','Site'], values='System')
 
 'Pivot Table'
 df1.style.background_gradient(cmap='Greens')
-st.write(df1)
+st.write(df1.style.background_gradient(cmap='Greens'))
    
              
 'Probably nothing.'
