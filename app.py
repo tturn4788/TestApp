@@ -155,7 +155,7 @@ with st.beta_container():
     st.write(filtered_data)
 
 
-st.subheader('Map of all pickups at:)
+st.subheader('Map of all pickups at:')
 #st.(filtered_data)
 
 #chart_data = filtered_data
