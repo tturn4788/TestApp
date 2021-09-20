@@ -74,10 +74,10 @@ with st.beta_container():
         #d1 = data['Site']==SITES_SELECTED
         d2 = data[COLUMNS_SELECTED]
         d3 = data[SYSTEMS_SELECTED]
-
+        #site_df = stats_df[stats_df['Site'].isin(select_site)
         mask_site = data
         #mask_site = data[data[[d2]]]
-        st.write(mask_site[[mask_site.columns in d2]])
+        st.write(mask_site[[mask_site.columns.isin(d2)]])
 
 
 #with col2:
