@@ -100,7 +100,7 @@ fig.show()
 
 
 
-hist_values = data[['Site','System']]
+hist_values = data.groupby(['Zone','Site'])[['System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
 
 
@@ -169,6 +169,7 @@ with interactive:
     df[c0]
 
 df1=data.pivot(columns=['Zone','Site'], values='System')
+#st.write(data.pivot(columns=['Zone','Site'], values='System'))
 #df1.reset_index()
 #to obtain the 1st column content
 #df1.reset_index().iloc[:,[0]]
@@ -177,14 +178,17 @@ df1=data.pivot(columns=['Zone','Site'], values='System')
 
 'Pivot Table'
 df1.style.background_gradient(cmap='Greens')
-st.write(df1.style.background_gradient(cmap='Greens'))
+st.write(df1.style.background_gradient(cmap='RdYlGn_r'))
    
              
 'Probably nothing.'
 
-st.write(data.pivot(columns=['Zone','Site'], values='System'))
 
 
+data['Quarter'] = data.index.quarter.values
+grouped = data.groupby(['Zone','Site','Quarter'])
+#Sampled monthly
+grouped.resample('Q')[['System']].mean().plot()
 
 
 st.markdown('This app is meant as a proof of concept to demonstrate the utility of web-based interfaces for Excel files.')
