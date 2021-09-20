@@ -29,7 +29,6 @@ DATA_URL = ('SampleforWork4.csv')
 data = pd.read_csv('SampleforWork4.csv',parse_dates=['Date'])
 #data['Date'] = pd.to_datetime(data['Date'])
 data.set_index('Date', inplace=True)
-data.dropna()
 #Variables for later
 
 interactive = st.beta_container()
@@ -77,7 +76,7 @@ with st.beta_container():
         d3 = data[SYSTEMS_SELECTED]
 
 
-        mask_site = data[[d2]]
+        mask_site = data[[index, d2]]
         st.write(mask_site)
 
 
