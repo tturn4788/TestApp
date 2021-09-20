@@ -41,6 +41,7 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 
+st.write(data.groupby(['Zone','Site']).plot(y='System', legend=True))
                                    
 #st.subheader('Number of pickups by hour')
 all_columns_names= data.columns.values()
@@ -56,7 +57,7 @@ for name,group in data.groupby(selected_column_names[1]):
     trace.name = name 
     trace.x = group[selected_column_names[2]]
     fig.add_trace(trace)
-st.plotly_chart(fig)
+    st.write(fig)
 
 
 
@@ -121,7 +122,7 @@ hist_values = data.groupby(['Zone','Site'])[['System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
 
 'st.pyplot'
-#st.pyplot(data.groupby(['Zone','Site']).plot(y='System', legend=True))
+st.write(data.groupby(['Zone','Site']).plot(y='System', legend=True))
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
