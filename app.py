@@ -9,7 +9,7 @@ import altair as alt
 import plotly.express as px
 
 
-
+st.set_page_config(layout="wide")
 #create a canvas for each item
 interactive =  st.beta_container()
 
