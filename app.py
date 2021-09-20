@@ -60,7 +60,7 @@ if st.checkbox('Show raw data'):
 
 
 
-col1, col2, col3, col4, col5 = st.beta_columns(2)
+col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
 # Mask to filter dataframe
 with st.beta_container():
