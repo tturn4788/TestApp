@@ -46,7 +46,7 @@ if st.checkbox('Show raw data'):
 all_columns_names= data.columns.tolist()
 selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
-s = data[selected_column_names[0]].str.strip().value_counts()
+s = data[selected_column_names[0]].value_counts()
 
 
 with interactive:
