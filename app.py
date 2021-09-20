@@ -129,8 +129,8 @@ with col2:
     st.line_chart(subbed)
 
 with st.beta_container():
-'After'
-#st.write(subbed_twice)
+    'After'
+    #st.write(subbed_twice)
 
 data.groupby(['Zone','Site'])[['Site','System']].plot.scatter(x='Site',y = 'System')
 
