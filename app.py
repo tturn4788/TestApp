@@ -46,12 +46,12 @@ if st.checkbox('Show raw data'):
 all_columns_names= data.columns.tolist()
 selected_column_names = st.multiselect("select column to plot",all_columns_names)
 
-s = data[selected_column_names].values()
+#s = data[selected_column_names].values()
 
 
 
 fig = go.Figure
-for name,group in data.groupby(selected_column_names[]):
+for name,group in data.groupby(selected_column_names[0]):
     trace =go.Line()
     trace.name = name 
     trace.x = group[selected_column_names[1]]
