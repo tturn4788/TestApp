@@ -72,7 +72,7 @@ with st.beta_container():
         COLUMNS = data.columns
         COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
         
-        d1 = data[(data.Site.eq(SITES_SELECTED))]
+        d1 = data[(data.Site.values==SITES_SELECTED)]
         d2 = data[COLUMNS_SELECTED]
         d3 = data[SYSTEMS_SELECTED]
 
