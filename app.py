@@ -32,7 +32,7 @@ data.dropna()
 SITES = data.Site.unique()
 SYSTEMS = ['System','System1','System2']
 
-
+interactive = st.beta_container()
     
 
 #data_load_state = st.text('Loading data...')
@@ -111,17 +111,16 @@ st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 10)
 
-with st.beta_container:
+with st.beta_container():
     with col1:
         'Before'
         subbed = data[(data.Site.eq(siting))]
-exit with
 
     with col2:
         "st.line_chart(subbed[['Date','System']])"
         st.line_chart(subbed[['Date','System']])
 
-with st.beta_container:
+with st.beta_container():
     with col1:
         'st.write(subbed)'
         st.write(subbed)
@@ -130,7 +129,7 @@ with st.beta_container:
         'st.line_chart(subbed)'
         st.line_chart(subbed)
 
-with st.beta_container:
+with st.beta_container():
     with col1:
 
 
@@ -150,7 +149,7 @@ with beta_container:
 
     st.write(filtered_data)
 
-with beta_container:
+with beta_container():
     # Some number in the range 0-4
     site2_to_filter = st.slider('Quarter', 0, 2, 5)
     filtered_data = data[data['Site'] == site_to_filter]
@@ -162,7 +161,7 @@ with beta_container:
 
 #chart_data = filtered_data
 #filtered_data[ = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
-with st.beta_container:
+with interactive:
     st.markdown('Set as variable then st.write')
     st.write(filtered_data[filtered_data.Date.dt.quarter.eq(site_to_filter)])
 
