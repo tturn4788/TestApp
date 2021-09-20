@@ -107,7 +107,7 @@ with st.beta_container():
 hist_values = data.groupby(['Zone','Site'])[['System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
 
-data.groupby(['Zone','Site'])[['System']].plot(legend=True)
+data.groupby(['Zone','Site'])[['System']].plot(y='System', legend=True)
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
