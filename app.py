@@ -72,7 +72,7 @@ with st.beta_container():
         COLUMNS = data.columns
         COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
         
-        d1 = data['Site']==SITES_SELECTED
+        #d1 = data['Site']==SITES_SELECTED
         d2 = data[COLUMNS_SELECTED]
         d3 = data[SYSTEMS_SELECTED]
 
@@ -120,7 +120,7 @@ siting = st.slider('Site', 1, 10)
 
 with st.beta_container():
     'Before'
-    subbed = data[(data.Site.eq(d1))]
+    subbed = data[(data.Site.eq(siting))]
     'st.line_chart(subbed)'
     st.line_chart(subbed[['Systen','System1','System2']])
 
