@@ -69,6 +69,9 @@ with st.beta_container():
         COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
         mask_site = data[COLUMNS_SELECTED]
         st.write(mask_site)
+    end with
+end with
+
 #with col2:
     #go.line(mask_site)
 'mask_site'
@@ -112,7 +115,7 @@ with st.beta_container:
     with col1:
         'Before'
         subbed = data[(data.Site.eq(siting))]
-
+exit with
 
     with col2:
         "st.line_chart(subbed[['Date','System']])"
