@@ -117,7 +117,7 @@ hist_values = data.groupby(['Zone','Site'])[['System']]
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
-st.line_chart(data.index, data.groupby(['Zone','Site'])[['System']] )
+st.line_chart(data[data.groupby(['Zone','Site'])[['System']]] )
 
 siting = st.slider('Site', 1, 10)
 
