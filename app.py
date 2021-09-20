@@ -97,15 +97,14 @@ fig.show()
 
 
 
-with st.beta_container:
-    hist_values = data[['Site','Date','System']]
-    hist_values = hist_values.set_index('Date', inplace=True)
+hist_values = data[['Site','Date','System']]
+hist_values = hist_values.set_index('Date', inplace=True)
 
 
     #hist_values.plot(legend=True)
 
-    'st.line_chart(hist_values)'
-    st.line_chart(hist_values)
+'st.line_chart(hist_values)'
+st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 10)
 
