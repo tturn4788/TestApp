@@ -60,8 +60,7 @@ fig = go.Figure()
   
 
 
-fig.add_trace(go.Scatter(x = data.index, y = data.System, mode = 'lines', 
-                         name = 'System Chart'))
+fig.add_trace(go.Scatter(x = data.index, y = data.System, mode = 'lines'))
 st.plotly_chart(fig, use_container_width=True)
 
 col1, col2 = st.beta_columns(2)
@@ -117,7 +116,7 @@ data.groupby(['Zone','Site'])[['System']].plot(y='System', legend=True)
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
-st.line_chart(hist_values)
+st.line_chart(data.groupby(['Zone','Site'])[['System'])
 
 siting = st.slider('Site', 1, 10)
 
