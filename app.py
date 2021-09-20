@@ -75,9 +75,9 @@ with st.beta_container():
         d2 = data[COLUMNS_SELECTED]
         d3 = data[SYSTEMS_SELECTED]
 
-
-        mask_site = data[data[[d2]]]
-        st.write(mask_site)
+        mask_site = data
+        #mask_site = data[data[[d2]]]
+        st.write(mask_site[[d2]])
 
 
 #with col2:
