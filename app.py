@@ -168,11 +168,11 @@ with interactive:
     df[c0]
 
 df1=data.pivot_table(columns=['Zone','Site'], values='System')
-df1.reset_index()
+#df1.reset_index()
 #to obtain the 1st column content
-df1.reset_index().iloc[:,[0]]
+#df1.reset_index().iloc[:,[0]]
 #to obtain the 2rd column content
-df1.reset_index().iloc[:,[1]]
+#df1.reset_index().iloc[:,[1]]
 
 'Pivot Table'
 st.write(df1)
