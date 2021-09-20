@@ -56,10 +56,10 @@ if st.checkbox('Show raw data'):
 'hist_values.groupby("Site")["System"].plot(legend=True)'
 
 
-fig = go.Figure()
+#fig = go.Figure()
 
-fig.add_trace(data.groupby(['Site'])['System'])
-st.line_chart(fig, use_container_width=True)
+#fig.add_trace(data.groupby(['Site'])['System'])
+#st.line_chart(fig, use_container_width=True)
 
 col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
@@ -95,7 +95,7 @@ with st.beta_container():
 
 #fig = px.line(df, y='System')
 #fig.show()
-#fig = px.line(data, "System")
+fig = px.line(data, "System")
 st.pyplot(fig)
 
 
