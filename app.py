@@ -179,7 +179,7 @@ st.write(df1)
    
              
 'Probably nothing.'             
-st.write(data.pivot(columns='Site', values='System'))
+st.write(data.pivot(columns=['Zone','Site'], values='System'))
 
 
 
