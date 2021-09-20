@@ -153,7 +153,7 @@ with st.beta_container():
     # Some number in the range 0-4
     site2_to_filter = st.slider('Site to view:', 1, 11, 5)
     filtered_data = data[data['Site'] == site_to_filter]
-    st.write(filtered_data)
+    st.write(filtered_data.style.background_gradient(cmap='Greens'))
 
 
 st.subheader('Map of all pickups at:')
