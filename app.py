@@ -76,7 +76,7 @@ with st.beta_container():
         d3 = data[SYSTEMS_SELECTED]
 
 
-        mask_site = data[[index, d2]]
+        mask_site = data[[data.index, d2]]
         st.write(mask_site)
 
 
