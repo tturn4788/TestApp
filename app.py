@@ -77,7 +77,7 @@ with st.beta_container():
         d3 = data[SYSTEMS_SELECTED]
 
 
-        mask_site = data[d1 & d2 & d3]
+        mask_site = data[d2 & d3]
         st.write(mask_site)
 
 
@@ -120,18 +120,17 @@ siting = st.slider('Site', 1, 10)
 
 with st.beta_container():
     'Before'
-    subbed = data[(data.Site.eq(siting))]
+    subbed = data[(data.Site.eq(d1))]
+    'st.line_chart(subbed)'
+    st.line_chart(subbed[['Systen','System1','System2']])
 
     "st.line_chart(subbed[['Date','System']])"
     st.line_chart(subbed['System'])
 
-    with st.beta_container():
-        'st.write(subbed)'
-        st.write(subbed)
+
 
 with col2:
-    'st.line_chart(subbed)'
-    st.line_chart(subbed)
+
 
 with st.beta_container():
     'After'
