@@ -59,7 +59,7 @@ if st.checkbox('Show raw data'):
 fig = go.Figure()
 
 
-fig.add_trace((x = data.index, y = data.System, mode = 'lines'))
+fig.add_trace(x = data.index, y = data.System, mode = 'lines')
 st.line_chart(fig, use_container_width=True)
 
 col1, col2 = st.beta_columns(2)
