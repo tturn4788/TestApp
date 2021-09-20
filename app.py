@@ -141,14 +141,14 @@ with st.beta_container():
         data.groupby(['Zone','Site'])[['Site','System']].mean().plot.scatter(x='Site',y = 'System')
 
 
-with beta_container():
+with st.beta_container():
     # Some number in the range 0-11
     site_to_filter = st.slider('Site', 0, 6, 10)
     filtered_data = data[data['Site'] == site_to_filter]
 
     st.write(filtered_data)
 
-with beta_container():
+with st.beta_container():
     # Some number in the range 0-4
     site2_to_filter = st.slider('Quarter', 0, 2, 5)
     filtered_data = data[data['Site'] == site_to_filter]
