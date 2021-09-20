@@ -40,8 +40,8 @@ interactive = st.beta_container()
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
-
-st.write(data.groupby(['Zone','Site']).plot(y='System', legend=True))
+#st.write(Data["System"].plot(legend=True))
+st.write(data[data.groupby(['Zone','Site'])][['System'].plot())
                                    
 #st.subheader('Number of pickups by hour')
 all_columns_names= data.columns.values()
@@ -61,9 +61,9 @@ for name,group in data.groupby(selected_column_names[1]):
 
 
 
-#hist_values = data[['Site','Date','System']]
+#hist_values = data[['Site','System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
-'hist_values.groupby("Site")["System"].plot(legend=True)'
+'ue)'
 
 
 #fig = go.Figure()
