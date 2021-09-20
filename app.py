@@ -161,18 +161,14 @@ with st.beta_container():
 #chart_data = filtered_data
 #filtered_data[ = filtered_data[(filtered_data.Date.dt.quarter is (site2_to_filter))]
 with interactive:
-    st.markdown('Set as variable then st.write')
-    filtered_data['Quarter'] = data.index.quarter.values
-    st.write(filtered_data[filtered_data['Quarter']==(site_to_filter)])
-    
-c0 = data.index.to_series().between('2021-01-01', '2021-01-10')
-#c1 = df['column A'] == 'Done'
-#c2 = df['column B'] < 3.14
+    c0 = data.index.to_series().between('2021-01-01', '2021-01-10')
+    #c1 = df['column A'] == 'Done'
+    #c2 = df['column B'] < 3.14
 
-df[c0]
+    df[c0]
 
 
-st.write(data.pivot(columns='Site', values='System'))
+    st.write(data.pivot(columns='Site', values='System'))
 
 
 
