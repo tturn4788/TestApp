@@ -122,7 +122,7 @@ with st.beta_container():
     'Before'
     subbed = data[(data.Site.eq(siting))]
     'st.line_chart(subbed)'
-    st.line_chart(subbed[['Systen','System1','System2']])
+    st.line_chart(subbed[['System','System1','System2']])
 
     "st.line_chart(subbed[['Date','System']])"
     st.line_chart(subbed['System'])
