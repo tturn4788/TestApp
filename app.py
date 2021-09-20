@@ -57,11 +57,10 @@ if st.checkbox('Show raw data'):
 
 
 fig = go.Figure()
-  
 
 
-fig.add_trace(go.Scatter(x = data.index, y = data.System, mode = 'lines'))
-st.plotly_chart(fig, use_container_width=True)
+fig.add_trace((x = data.index, y = data.System, mode = 'lines'))
+st.line_chart(fig, use_container_width=True)
 
 col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
@@ -98,7 +97,7 @@ with st.beta_container():
 #fig = px.line(df, y='System')
 #fig.show()
 #fig = px.line(data, "System")
-#fig.show()
+st.pyplot(fig)
 
 
 
