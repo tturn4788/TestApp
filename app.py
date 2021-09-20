@@ -121,8 +121,8 @@ with st.beta_container():
     st.line_chart(subbed['System'])
 
     with st.beta_container():
-    'st.write(subbed)'
-    st.write(subbed)
+        'st.write(subbed)'
+        st.write(subbed)
 
 with col2:
     'st.line_chart(subbed)'
