@@ -114,7 +114,7 @@ hist_values = data.groupby(['Zone','Site'])[['System']]
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
-st.line_chart(hist_values.System.mean())
+st.line_chart(hist_values)
 
 siting = st.slider('Site', 1, 10)
 
