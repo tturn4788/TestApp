@@ -63,16 +63,17 @@ col1, col2 = st.beta_columns(2)
 col_1 = st.beta_columns(1)
 # Mask to filter dataframe
 with st.beta_container():
-'Create a custom table:'
-SITES = data.Site.unique()
-SYSTEMS = ['System','System1','System2']
-SITES_SELECTED = st.multiselect('Select site(s)', SITES)
-SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
+    with col1:
+        'Create a custom table:'
+        SITES = data.Site.unique()
+        SYSTEMS = ['System','System1','System2']
+        SITES_SELECTED = st.multiselect('Select site(s)', SITES)
+        SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
 
-COLUMNS = data.columns
-COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
-mask_site = data[SITES_SELECTED & SYSTEMS_SELECTED & COLUMNS_SELECTED]
-st.write(mask_site)
+        COLUMNS = data.columns
+        COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
+        mask_site = data[SITES_SELECTED & SYSTEMS_SELECTED & COLUMNS_SELECTED]
+        st.write(mask_site)
 
 
 #with col2:
@@ -83,14 +84,14 @@ st.write(mask_site)
 #col2.st.line_chart(mask_site)
 'data mask'
 
-
-mask_site.plot()
+    with col2:
+       mask_site.plot()
 #df.set_index('Date', inplace=True)
 
-fig = px.line(df, y='System')
-fig.show()
-fig = px.line(data, "System")
-fig.show()
+#fig = px.line(df, y='System')
+#fig.show()
+#fig = px.line(data, "System")
+#fig.show()
 
 
 
@@ -108,30 +109,30 @@ hist_values = data.groupby(['Zone','Site'])[['System']]
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
-st.line_chart(hist_values)
+st.line_chart(hist_values.System.mean())
 
 siting = st.slider('Site', 1, 10)
 
 with st.beta_container():
-'Before'
-subbed = data[(data.Site.eq(siting))]
+    'Before'
+    subbed = data[(data.Site.eq(siting))]
 
-"st.line_chart(subbed[['Date','System']])"
-st.line_chart(subbed['System'])
+    "st.line_chart(subbed[['Date','System']])"
+    st.line_chart(subbed['System'])
 
-with st.beta_container():
-'st.write(subbed)'
-st.write(subbed)
+    with st.beta_container():
+    'st.write(subbed)'
+    st.write(subbed)
 
 with col2:
-'st.line_chart(subbed)'
-st.line_chart(subbed)
+    'st.line_chart(subbed)'
+    st.line_chart(subbed)
 
 with st.beta_container():
 'After'
 #st.write(subbed_twice)
 
-data.groupby(['Zone','Site'])[['Site','System']].mean().plot.scatter(x='Site',y = 'System')
+data.groupby(['Zone','Site'])[['Site','System']].plot.scatter(x='Site',y = 'System')
 
 
 with st.beta_container():
