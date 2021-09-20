@@ -77,7 +77,7 @@ with st.beta_container():
 
         mask_site = data
         #mask_site = data[data[[d2]]]
-        st.write(mask_site[[d2]])
+        st.write(mask_site[[mask_site.columns is in d2]])
 
 
 #with col2:
