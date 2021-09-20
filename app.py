@@ -129,14 +129,16 @@ with st.beta_container():
 
 
 
-with col2:
+
 
 
 with st.beta_container():
+    
     'After'
     #st.write(subbed_twice)
 
-data.groupby(['Zone','Site'])[['Site','System']].plot.scatter(x='Site',y = 'System')
+    df3 = data.groupby(['Zone','Site'])
+    df3[['Site','System']].plot(kind='scatter',x='Site',y = 'System')
 
 
 with st.beta_container():
