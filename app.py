@@ -41,7 +41,7 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 #st.write(Data["System"].plot(legend=True))
-st.write(data[data.groupby(['Zone','Site'])]['Site','System'].plot())
+st.write(data.groupby(['Zone','Site'])['Site','System'].plot())
                                    
 #st.subheader('Number of pickups by hour')
 all_columns_names= data.columns.values()
