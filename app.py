@@ -165,7 +165,7 @@ with interactive:
     #c1 = df['column A'] == 'Done'
     #c2 = df['column B'] < 3.14
 
-    df[c0]
+    st.write(data[c0])
 
 df1=data.pivot(columns=['Zone','Site'], values='System')
 #st.write(data.pivot(columns=['Zone','Site'], values='System'))
