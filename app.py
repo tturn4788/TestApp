@@ -69,8 +69,7 @@ with st.beta_container():
         COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
         mask_site = data[COLUMNS_SELECTED]
         st.write(mask_site)
-    exit with
-exit with
+
 
 #with col2:
     #go.line(mask_site)
