@@ -72,7 +72,7 @@ with st.beta_container():
 
         COLUMNS = data.columns
         COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
-        mask_site = data[SITES_SELECTED & SYSTEMS_SELECTED & COLUMNS_SELECTED]
+        mask_site = data[[SITES_SELECTED & SYSTEMS_SELECTED & COLUMNS_SELECTED]]
         st.write(mask_site)
 
 
