@@ -69,10 +69,15 @@ with st.beta_container():
         SYSTEMS = ['System','System1','System2']
         SITES_SELECTED = st.multiselect('Select site(s)', SITES)
         SYSTEMS_SELECTED = st.multiselect('Select system(s)', SYSTEMS)
-
         COLUMNS = data.columns
         COLUMNS_SELECTED = st.multiselect('Select column(s)', COLUMNS)
-        mask_site = data[[SITES_SELECTED & SYSTEMS_SELECTED & COLUMNS_SELECTED]]
+        
+        d1 = data['Site'] == SITES_SELECTED
+        d2 = data[COLUMNS_SELECTED]
+        d3 = data[SYSTEMS_SELECTED]
+
+
+        mask_site = data[d1 & d2 & d3]
         st.write(mask_site)
 
 
