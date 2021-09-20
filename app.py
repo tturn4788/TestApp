@@ -150,12 +150,12 @@ with st.beta_container():
 
 with st.beta_container():
     # Some number in the range 0-4
-    site2_to_filter = st.slider('Site to view:', 0, 11, 5)
+    site2_to_filter = st.slider('Site to view:', 1, 11, 5)
     filtered_data = data[data['Site'] == site_to_filter]
-    st.write(filtered_data[['Zone','Site','System']])
+    st.write(filtered_data)
 
 
-#st.subheader('Map of all pickups at %s:00' % hour_to_filter)
+st.subheader('Map of all pickups at:)
 #st.(filtered_data)
 
 #chart_data = filtered_data
@@ -167,8 +167,19 @@ with interactive:
 
     df[c0]
 
+df1=data.pivot_table(columns=['Zone','Site'], values='System')
+df1.reset_index()
+#to obtain the 1st column content
+df1.reset_index().iloc[:,[0]]
+#to obtain the 2rd column content
+df1.reset_index().iloc[:,[1]]
 
-    st.write(data.pivot(columns='Site', values='System'))
+'Pivot Table'
+st.write(df1)
+   
+             
+'Probably nothing."             
+st.write(data.pivot(columns='Site', values='System'))
 
 
 
