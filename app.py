@@ -138,10 +138,10 @@ with st.beta_container():
 
     with col2:
         'And even more after'
-        data[data.index.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
+        data.groupby(['Zone','Site'])[['Site','System']].mean().plot.scatter(x='Site',y = 'System')
 
 
-with beta_container:
+with beta_container():
     # Some number in the range 0-11
     site_to_filter = st.slider('Site', 0, 6, 10)
     filtered_data = data[data['Site'] == site_to_filter]
