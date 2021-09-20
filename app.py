@@ -138,7 +138,7 @@ with st.beta_container():
 
     with col2:
         'And even more after'
-        data[data.Date.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
+        data[data.index.dt.quarter.eq(1)].groupby('Zone').plot.scatter(x='Date',y = 'System')
 
 
 with beta_container:
