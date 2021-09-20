@@ -112,11 +112,12 @@ with st.beta_container():
 hist_values = data.groupby(['Zone','Site'])[['System']]
 #hist_values = hist_values.set_index('Date', inplace=True)
 
-data.groupby(['Zone','Site'])[['System']].plot(y='System', legend=True)
+'st.pyplot'
+st.pyplot(data.groupby(['Zone','Site'])[['System']].plot(y='System', legend=True))
     #hist_values.plot(legend=True)
 
 'st.line_chart(hist_values)'
-st.line_chart(data.groupby(['Zone','Site'])[['System'])
+st.line_chart(data.groupby(['Zone','Site'])[['System']])
 
 siting = st.slider('Site', 1, 10)
 
