@@ -54,7 +54,7 @@ fig = go.Figure()
 for name,group in data.groupby(selected_column_names[1]):
     trace =go.Line()
     trace.name = name 
-    trace.x = group[selected_column_names[]]
+    trace.x = group[selected_column_names[2]]
     fig.add_trace(trace)
 st.plotly_chart(fig)
 
